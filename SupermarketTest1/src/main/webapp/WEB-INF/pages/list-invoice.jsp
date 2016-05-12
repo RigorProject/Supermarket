@@ -57,25 +57,27 @@
 				<!-- Form Name -->
 				<legend>Place Invoice</legend>
 
-				
+			
 
-				<!-- Text input-->
+				<<!-- Text input-->
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="productId">Product Id</label>  
+				  <label class="col-md-4 control-label" for="Item_ID">Product Id</label>  
 				  <div class="col-md-4">
-				  <input id="productId" name="productId" type="text" placeholder="" class="form-control input-md" required="">
+				  <input id="productId" name="Item_ID" type="text" placeholder="" class="form-control input-md" required="">
 					
 				  </div>
-				</div>
+				</div> 
 
 				<!-- Text input-->
-				<div class="form-group">
+			 	<div class="form-group">
 				  <label class="col-md-4 control-label" for="amount">Amount</label>  
 				  <div class="col-md-4">
 				  <input id="amount" name="amount" type="text" placeholder="" class="form-control input-md" required="">
 					
 				  </div>
-				</div>
+				</div> 
+				
+				
 
 				<!-- Button (Double) -->
 				<div class="form-group">
