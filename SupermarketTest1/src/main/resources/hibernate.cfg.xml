@@ -18,7 +18,6 @@
 		<property name="format_sql">true</property>
 		<property name="hbm2ddl.auto">update</property>
 		<mapping class="com.rigor.entity.Grn" />
-		<mapping class="com.rigor.entity.Supplier" />
 		<mapping class="com.rigor.entity.InvoiceItem" />
 
 	</session-factory>
