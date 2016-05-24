@@ -3,10 +3,10 @@ CRUD application deveoped using Maven, Spring MVC and  Hibernate (Learning Purpo
 
  Functionalities 
 #1 : GRN Functions
-  GRN Create
-  GRN Delete
-  GRN Update
-  GRN Search (Not yet implemented)
+  #1 : GRN Create
+  #2 : GRN Delete
+  #3 : GRN Update
+  #4 : GRN Search (Not yet implemented)
   
 #2 : Item Functions
   Item  Create
