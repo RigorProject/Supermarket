@@ -41,3 +41,12 @@ CRUD application deveoped using Maven, Spring MVC and  Hibernate (Learning Purpo
 
 ### Class Diagram of the Project 
 ![Alt text](/UIs/Class Diagram - Draft-2.png?raw=true "Class Diagram")
+
+### Working Product Function GUIs
+![Alt text](/UIs/W1.PNG?raw=true "MANA GUIs")
+![Alt text](/UIs/W2.PNG?raw=true "MANA GUIs")
+![Alt text](/UIs/W3.PNG?raw=true "MANA GUIs")
+![Alt text](/UIs/W4.PNG?raw=true "MANA GUIs")
+![Alt text](/UIs/W5.PNG?raw=true "MANA GUIs")
+![Alt text](/UIs/W6.PNG?raw=true "MANA GUIs")
+
