@@ -1,30 +1,41 @@
 # Supermarket
 CRUD application deveoped using Maven, Spring MVC and  Hibernate (Learning Purpose)
 
- Functionalities 
-#1 : GRN Functions
-  #1 : GRN Create
-  #2 : GRN Delete
-  #3 : GRN Update
-  #4 : GRN Search (Not yet implemented)
-  
-#2 : Item Functions
-  Item  Create
-  Item  Delete
-  Item  Update
-  Item  Search(Not yet implemented)
-  
-#3 : Supplier Functions
-  Add Supplier
-  Delete Supplier
-  Edit Supplier
+##Functionalities 
+###1 : GRN Functions
+1. [GRN Create](#GRN Create)
+1. [GRN Delete](#GRN Delete)
+1. [GRN Update](#GRN Update)
+2. GRN Search - Not Implemented
 
-#4 : Invoice Function
-  Create Invoice
-  Search Invoice
-  Edit Invoice
-  Cancel Invoice
   
-  #3 : Journal & Stock Functions
-  View Journal(Not yet implemented)
-  View Stock(Not yet implemented)
+###2 : Item Functions
+1.  Item  Create
+2.  Item  Delete
+3.  Item  Update
+4.  Item  Search(Not yet implemented)
+  
+###3 : Supplier Functions
+1.  Add Supplier
+2.  Delete Supplier
+3.  Edit Supplier
+
+###4 : Invoice Function
+ 1. Create Invoice
+ 2. Search Invoice
+ 3. Edit Invoice
+ 4. Cancel Invoice
+  
+###3 : Journal & Stock Functions
+ 1. View Journal(Not yet implemented)
+ 2. View Stock(Not yet implemented)
+ 
+
+### UI Mockups for the initial Project 
+![Alt text](/UIs/1.PNG?raw=true "Add Items")
+![Alt text](/UIs/2.PNG?raw=true "Add Items")
+![Alt text](/UIs/3.PNG?raw=true "Add Items")
+![Alt text](/UIs/4.PNG?raw=true "Add Items")
+![Alt text](/UIs/5.PNG?raw=true "Add Items")
+![Alt text](/UIs/6.PNG?raw=true "Add Items")
+
