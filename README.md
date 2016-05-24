@@ -32,10 +32,12 @@ CRUD application deveoped using Maven, Spring MVC and  Hibernate (Learning Purpo
  
 
 ### UI Mockups for the initial Project 
-![Alt text](/UIs/1.PNG?raw=true "Add Items")
-![Alt text](/UIs/2.PNG?raw=true "Add Items")
-![Alt text](/UIs/3.PNG?raw=true "Add Items")
-![Alt text](/UIs/4.PNG?raw=true "Add Items")
-![Alt text](/UIs/5.PNG?raw=true "Add Items")
-![Alt text](/UIs/6.PNG?raw=true "Add Items")
+![Alt text](/UIs/1.PNG?raw=true "MANA Mockups")
+![Alt text](/UIs/2.PNG?raw=true "MANA Mockups")
+![Alt text](/UIs/3.PNG?raw=true "MANA Mockups")
+![Alt text](/UIs/4.PNG?raw=true "MANA Mockups")
+![Alt text](/UIs/5.PNG?raw=true "MANA Mockups")
+![Alt text](/UIs/6.PNG?raw=true "MANA Mockups")
 
+### Class Diagram of the Project 
+![Alt text](/UIs/Class Diagram - Draft-2.png?raw=true "Class Diagram")
