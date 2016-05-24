@@ -4,16 +4,27 @@ CRUD application deveoped using Maven, Spring MVC and  Hibernate (Learning Purpo
  Functionalities 
 #1 : GRN Functions
   GRN Create
-  GRN Create
-  GRN Search
+  GRN Delete
+  GRN Update
+  GRN Search (Not yet implemented)
+  
 #2 : Item Functions
-  Item Create
-  Item Search
-#3 : Journal & Stock Functions
-  View Journal
-  View Stock
+  Item  Create
+  Item  Delete
+  Item  Update
+  Item  Search(Not yet implemented)
+  
+#3 : Supplier Functions
+  Add Supplier
+  Delete Supplier
+  Edit Supplier
+
 #4 : Invoice Function
   Create Invoice
   Search Invoice
   Edit Invoice
   Cancel Invoice
+  
+  #3 : Journal & Stock Functions
+  View Journal(Not yet implemented)
+  View Stock(Not yet implemented)
