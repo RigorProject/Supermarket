@@ -1,6 +1,11 @@
 # Supermarket
 CRUD application deveoped using Maven, Spring MVC and  Hibernate (Learning Purpose)
 
+This project use Maven to create a simple Java project structure, and demonstrate how to use Hibernate in Spring framework to do the data manipulation works(insert, select, update and delete) in MySQL database.
+
+### Project Structure 
+![Alt text](/UIs/ProjectStructure.PNG?raw=true "MANA GUIs")
+
 ##Functionalities 
 ###1 : GRN Functions
 1. [GRN Create](#GRN Create)
