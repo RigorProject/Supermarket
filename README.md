@@ -6,6 +6,8 @@ This project use Maven to create a simple Java project structure, and demonstrat
 ### Project Structure 
 ![Alt text](/UIs/ProjectStructure.PNG?raw=true "MANA GUIs")
 
+If you wish to run this project in your own please follow the instruction given in the [wiki](#https://github.com/RigorProject/Supermarket/wiki/_new)
+
 ##Functionalities 
 ###1 : GRN Functions
 1. [GRN Create](#GRN Create)
