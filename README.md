@@ -12,10 +12,10 @@ https://github.com/RigorProject/Supermarket/wiki
 
 ##Functionalities 
 ###1 : GRN Functions
-1. [GRN Create](#GRN Create)
-1. [GRN Delete](#GRN Delete)
-1. [GRN Update](#GRN Update)
-2. GRN Search - Not Implemented
+1. GRN Create
+2. GRN Delete
+3. GRN Update
+4. GRN Search - Not Implemented
 
   
 ###2 : Item Functions
