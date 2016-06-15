@@ -6,6 +6,9 @@ This project use Maven to create a simple Java project structure, and demonstrat
 ### Project Structure 
 ![Alt text](/UIs/ProjectStructure.PNG?raw=true "MANA GUIs")
 
+### ER Diagram
+![Alt text](/UIs/ER Diagram.png?raw=true "ER Diagram")
+
 If you wish to run this project in your own please follow the instruction given in the wiki
 https://github.com/RigorProject/Supermarket/wiki 
 
