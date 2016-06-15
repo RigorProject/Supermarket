@@ -75,6 +75,7 @@ public class GrnDAOImpl implements GrnDAO {
 			throw e;
 		}finally {
 			session.close();
+			findAll();
 		}
 	}
 
@@ -82,8 +83,10 @@ public class GrnDAOImpl implements GrnDAO {
 	public List<Grn> findAll() {
 		Session session = HibernateUtility.getSessionFactory().openSession();
 		try {
-			Criteria c=session.createCriteria(Grn.class);
-			return c.list();
+			
+			Query query = session.createQuery("from Grn g");
+			return query.list();
+				
 		} catch (HibernateException e) {
 			try {
 				session.getTransaction().rollback();
@@ -91,8 +94,7 @@ public class GrnDAOImpl implements GrnDAO {
 				System.out.println("Couldn’t roll back transaction"+e2);
 			}
 			throw e;
-		}finally {
-			session.close();
+		
 		}
 		
 	}
@@ -102,6 +104,9 @@ public class GrnDAOImpl implements GrnDAO {
 			session.beginTransaction();
 			session.delete(findById(id));
 			session.getTransaction().commit();
+			
+			findAll();
+			
 		} catch (HibernateException e) {
 			try {
 				session.getTransaction().rollback();
@@ -110,6 +115,7 @@ public class GrnDAOImpl implements GrnDAO {
 			}
 			throw e;
 		}finally {
+		
 			session.close();
 		}
 

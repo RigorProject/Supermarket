@@ -122,9 +122,9 @@ public class ProductDAOImpl implements ProductDAO {
 				System.out.println("Couldn’t roll back transaction"+e2);
 			}
 			throw e;
-		}finally {
-			session.close();
+			
 		}
+		
 	}
 
 	/**
@@ -133,11 +133,14 @@ public class ProductDAOImpl implements ProductDAO {
 	 * 
 	 */
 	public void deleteById(int id) {
-	    Session session = HibernateUtility.getSessionFactory().openSession();
+		Session session = HibernateUtility.getSessionFactory().openSession();
 		try {
 			session.beginTransaction();
 			session.delete(findById(id));
 			session.getTransaction().commit();
+			
+			findAll();
+			
 		} catch (HibernateException e) {
 			try {
 				session.getTransaction().rollback();

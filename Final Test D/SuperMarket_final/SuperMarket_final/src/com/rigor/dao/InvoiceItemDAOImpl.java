@@ -2,9 +2,9 @@ package com.rigor.dao;
 
 import java.util.List;
 
-import javax.persistence.Query;
+import org.hibernate.Query;
 
-import org.hibernate.Criteria;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
@@ -26,6 +26,7 @@ public class InvoiceItemDAOImpl implements InvoiceItemDAO {
 		
 		session.getTransaction().commit();
 		}catch(Exception e){
+			session.getTransaction().rollback();
 			e.printStackTrace();
 		}finally {
 			session.close();
@@ -62,7 +63,7 @@ public class InvoiceItemDAOImpl implements InvoiceItemDAO {
 
 	@Override
 	public void cancelInvoice(int id) {
-		Session session = HibernateUtility.getSessionFactory().getCurrentSession();
+		Session session = HibernateUtility.getSessionFactory().openSession();
 		try {
 			session.beginTransaction();
 			session.delete(findbyID(id));
@@ -77,6 +78,7 @@ public class InvoiceItemDAOImpl implements InvoiceItemDAO {
 			throw e;
 		}finally {
 			session.close();
+			findAll();
 		}
 		
 	}
@@ -89,7 +91,7 @@ public class InvoiceItemDAOImpl implements InvoiceItemDAO {
 
 	@Override
 	public InvoiceItem findbyID(int id) {
-		Session session = HibernateUtility.getSessionFactory().getCurrentSession();
+		Session session = HibernateUtility.getSessionFactory().openSession();
 		try {
 			return (InvoiceItem) session.get(InvoiceItem.class, id);
 			
@@ -108,10 +110,12 @@ public class InvoiceItemDAOImpl implements InvoiceItemDAO {
 
 	@Override
 	public List<InvoiceItem> findAll() {
-		Session session = HibernateUtility.getSessionFactory().getCurrentSession();
+		Session session = HibernateUtility.getSessionFactory().openSession();
 		try {
-			Criteria c=session.createCriteria(InvoiceItem.class);
-			return c.list();
+			
+			
+			Query query = session.createQuery("from InvoiceItem g");
+			return query.list();
 			
 		} catch (HibernateException e) {
 			try {
@@ -120,8 +124,6 @@ public class InvoiceItemDAOImpl implements InvoiceItemDAO {
 				System.out.println("Couldn’t roll back transaction"+e2);
 			}
 			throw e;
-		}finally {
-			session.close();
 		}
 		
 	}
