@@ -5,6 +5,7 @@
 	<artifactId>SuperMarket</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
+
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
@@ -26,7 +27,13 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
+	<properties>
+		<slf4j.version>1.6.4</slf4j.version>
+		<logback.version>1.0.1</logback.version>
+	</properties>
+
+
 	<dependencies>
 		<!-- Spring Framework -->
 		<dependency>
@@ -44,7 +51,7 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.2.1.RELEASE</version>
 		</dependency>
-		
+
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -58,6 +65,8 @@
 			<version>3.0.1</version>
 			<scope>provided</scope>
 		</dependency>
+
+
 		<!-- Hibernate Dependency -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -71,6 +80,24 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.10</version>
 		</dependency>
-	</dependencies>
 
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+
+	</dependencies>
 </project>
