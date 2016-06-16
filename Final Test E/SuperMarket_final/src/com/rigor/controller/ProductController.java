@@ -9,7 +9,7 @@ package com.rigor.controller;
 * This class is the controller class for Product.It prepares data,create a java object to 
 * hold the data
 * 
-* @author Nadeesha 
+* @autho Nadeesha 
 * 
 * @version 1.0
 * 
@@ -25,6 +25,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -43,8 +45,10 @@ public class ProductController {
 
 	private List<Product> productList = new ArrayList();
 
+
 	@Autowired
 	private ProductService productService;
+	
 
 	@RequestMapping(value = "/listProduct", method = RequestMethod.GET)
 	public ModelAndView listProduct() {
