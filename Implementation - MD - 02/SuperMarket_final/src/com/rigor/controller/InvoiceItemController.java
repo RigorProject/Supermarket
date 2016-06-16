@@ -51,32 +51,14 @@ public class InvoiceItemController {
 
 
 	@RequestMapping(value = "modifyInvoice")
-	public ModelAndView modifyGrn(InvoiceItem invoiceItm,
+	public ModelAndView modifyInvoice(InvoiceItem invoiceItm,
 			BindingResult result) {
 
 		return new ModelAndView("list-invoice");
 
 	}
 
-/*
-	@RequestMapping(value = "/listInvoice.htm")
-	public ModelAndView addInvoice(InvoiceItem invoiceItem, BindingResult result) {
-		ModelAndView modelAndView = new ModelAndView("list-invoice");
-	
-		if (invoiceItem.getInvoiceID() > 0) {
-			
-			invoiceItemService.createInvoice(invoiceItem);
-		} else {
-		
-			
-			invoiceItemService.createInvoice(invoiceItem);
-		}
-		
-		modelAndView.addObject("invoiceItem", new InvoiceItem());
-		System.out.println(invoiceItem.getInvoiceID());
-		return modelAndView;
-		
-	}*/
+
 
 	@RequestMapping(value = "/addInvoice.htm",method=RequestMethod.GET)
 	public ModelAndView addInvoice(ModelMap modelmap) {
@@ -88,13 +70,7 @@ public class InvoiceItemController {
 		
 	}
 	
-/*	@RequestMapping(value = "/editInvoice", method = RequestMethod.GET)
-	public String editInvoice(ModelMap modelMap, HttpServletRequest request) {
-		int invoiceId = Integer.parseInt(request.getParameter("id"));
-		modelMap.addAttribute("invoiceItem", invoiceItemService.getInvoice(invoiceId));
-		modelMap.addAttribute("update", true);
-		return "create-invoice";
-	}*/
+
 	@RequestMapping(value = "/editInvoice/{id}", method = RequestMethod.GET)
 	public String editPage(ModelMap modelMap, @PathVariable int id) {
 		int invoiceId = id;
@@ -113,7 +89,7 @@ public class InvoiceItemController {
 	}
 	
 	@RequestMapping(value = "/addInvoice" ,method=RequestMethod.POST)
-	public ModelAndView addGrn(InvoiceItem invoiceItm, BindingResult result) {
+	public ModelAndView addInvoice(InvoiceItem invoiceItm, BindingResult result) {
 		
 		
 		
@@ -122,7 +98,7 @@ public class InvoiceItemController {
 			invoiceItemService.editInvoice(invoiceItm);
 			
 		} else {
-			// add product
+			// add invoice
 			invoiceItemService.createInvoice(invoiceItm);
 			
 		}

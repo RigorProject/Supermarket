@@ -1,7 +1,9 @@
 package com.rigor.service;
 /** 
 
-* InvoiceItemService interface for InvoiceItem. 
+* InvoiceItemService interface for InvoiceItem.
+ 
+
 * 
 * Copyright (c) Virtusa Corporation 2016, All Rights Reserved.
 * 

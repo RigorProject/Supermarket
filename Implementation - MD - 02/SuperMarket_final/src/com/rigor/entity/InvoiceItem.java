@@ -1,6 +1,7 @@
 package com.rigor.entity;
 /* Entity class for Invoiceitem
 
+
  * 
  * Copyright (c) Virtusa Corporation 2016, All Rights Reserved.
  * 
