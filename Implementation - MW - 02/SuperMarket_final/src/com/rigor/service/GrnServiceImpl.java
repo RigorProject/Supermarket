@@ -51,7 +51,7 @@ public class GrnServiceImpl implements GrnService {
 
 	}
 	/** 
-	* Use to retrieve a grn using given id . 
+	* Use to retrieve a Grn using given id . 
 	* 
 	*/ 
 
