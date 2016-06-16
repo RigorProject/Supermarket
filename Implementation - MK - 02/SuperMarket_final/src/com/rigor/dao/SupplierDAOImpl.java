@@ -30,6 +30,12 @@ import com.rigor.util.HibernateUtility;
 @Repository
 public class SupplierDAOImpl implements SupplierDAO {
 	
+	/**
+	 * Use to establish connection with database and commit the changes(save)
+	 * into database .
+	 * 
+	 */
+	
 	public int save(Supplier supplier) {
 		Session session = HibernateUtility.getSessionFactory().openSession();
 		try {
@@ -50,6 +56,11 @@ public class SupplierDAOImpl implements SupplierDAO {
 		}
 	}
 
+	/**
+	 * Use to establish connection with database and commit the changes(update)
+	 * into database .
+	 * 
+	 */
 	public void update(Supplier supplier) {
 		Session session = HibernateUtility.getSessionFactory().openSession();
 
@@ -69,6 +80,12 @@ public class SupplierDAOImpl implements SupplierDAO {
 			session.close();
 		}
 	}
+	
+	/**
+	 * Use to establish connection with database and retrieve data from database
+	 * for given id .
+	 * 
+	 */
 
 	public Supplier findById(int id) {
 		Session session = HibernateUtility.getSessionFactory().openSession();
@@ -86,6 +103,12 @@ public class SupplierDAOImpl implements SupplierDAO {
 			session.close();
 		}
 	}
+	
+	/**
+	 * Use to establish connection with database and retrieve all data in a
+	 * given table for given id .
+	 * 
+	 */
 
 	public List<Supplier> findAll() {
 		Session session = HibernateUtility.getSessionFactory().openSession();
@@ -106,6 +129,11 @@ public class SupplierDAOImpl implements SupplierDAO {
 		}
 	}
 
+	/**
+	 * Use to establish connection with database and delete item in a
+	 * given table for given id .
+	 * 
+	 */
 	public void deleteById(int id) {
 		Session session = HibernateUtility.getSessionFactory().openSession();
 

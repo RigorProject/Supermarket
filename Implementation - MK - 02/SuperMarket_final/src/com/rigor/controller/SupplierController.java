@@ -88,7 +88,7 @@ public class SupplierController {
 		ModelAndView modelAndView = new ModelAndView("list-supplier");
 		if (supplier.getSupplierId() > 0) {
 			// update
-			supplierService.update(supplier);
+			supplierService.updateSupplier(supplier);
 		} else {
 			// add product
 			supplierService.saveSupplier(supplier);
