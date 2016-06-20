@@ -130,7 +130,7 @@ public class ProductController {
 			productService.update(product);
 		} else {
 			// add product
-			logger.debug("Updating {}.", product);
+			logger.debug("add Product {}.", product.getProductId());
 			productService.saveProduct(product);
 		}
 		modelAndView.addObject("products", productService.getAllProducts());

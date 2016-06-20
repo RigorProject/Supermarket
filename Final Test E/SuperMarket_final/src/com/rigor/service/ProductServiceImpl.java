@@ -34,7 +34,6 @@ public class ProductServiceImpl implements ProductService {
 	 * 
 	 */
 	public void saveProduct(Product product) {
-
 		productDAO.save(product);
 	}
 	
@@ -46,7 +45,6 @@ public class ProductServiceImpl implements ProductService {
 	 * 
 	 */
 	public void update(Product product) {
-
 		productDAO.update(product);
 
 	}
@@ -57,7 +55,6 @@ public class ProductServiceImpl implements ProductService {
 	 * 
 	 */
 	public Product getProduct(int id) {
-
 		Product product = productDAO.findById(id);
 		return product;
 	}
