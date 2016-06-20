@@ -1,10 +1,13 @@
 package com.rigor.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /** 
 
 * Entity Class for Product. 
 * 
-* Copyright (c) Virtusa Corporation 2016, All Rights Reserved.
+
 * 
 * This class is the entity class for Product which is  
 * use to generate table name item and create relevant columns for the table  . 
@@ -27,6 +30,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -34,7 +38,7 @@ import javax.persistence.Table;
 public class Product {
  @Id
  @GeneratedValue(strategy = GenerationType.IDENTITY)
- @Column(name = "product_id")
+ @Column(name = "PRODUCT_ID")
  private int productId;
 
  @Column(name = "product_name")
@@ -42,16 +46,12 @@ public class Product {
  @Column(name = "made_in")
  private String madeIn;
  private String brand;
- private float price;
+private float price;
  
-/* @ManyToOne
- @JoinColumn(name="invoice_id")
- private InvoiceItem invoiceItem ;
- 
- @ManyToOne
- @JoinColumn(name="grn_id")
- private Grn grns ;*/
 
+ private Set<GrnItem> GrnItem = new HashSet<GrnItem>();
+ 
+ 
  public int getProductId() {
   return productId;
  }
@@ -82,5 +82,14 @@ public class Product {
  public void setMadeIn(String madeIn) {
   this.madeIn = madeIn;
  }
+ 
+ 
+ @OneToOne(mappedBy = "primaryKey.product")
+ public Set<GrnItem> getGrnItem() {
+	return GrnItem;
+}
+public void setGrnItem(Set<GrnItem> grnItem) {
+	GrnItem = grnItem;
+}
 
 }
