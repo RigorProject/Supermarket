@@ -24,11 +24,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -42,6 +45,9 @@ public class SupplierController {
 
 	@Autowired
 	private SupplierService supplierService;
+	
+	 @Autowired
+	    MessageSource messageSource;
 
 	@RequestMapping(value = "/listSupplier", method = RequestMethod.GET)
 	public ModelAndView listSupplier() {
@@ -84,7 +90,12 @@ public class SupplierController {
 	}
 
 	@RequestMapping(value = "/addSupplier")
-	public ModelAndView addSupplier(Supplier supplier, BindingResult result) {
+	public ModelAndView addSupplier(@Valid @ModelAttribute("supplier") Supplier supplier, BindingResult result) {
+		
+		if(result.hasErrors()){
+			return new ModelAndView("create-supplier");
+		}
+		else {
 		ModelAndView modelAndView = new ModelAndView("list-supplier");
 		if (supplier.getSupplierId() > 0) {
 			// update
@@ -96,6 +107,7 @@ public class SupplierController {
 		modelAndView.addObject("suppliers", supplierService.getAllSuppliers());
 		System.out.println(supplier.getSupplierName());
 		return modelAndView;
+	}
 	}
 
 }

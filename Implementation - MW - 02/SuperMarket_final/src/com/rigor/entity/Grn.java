@@ -29,6 +29,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "grn")
@@ -37,13 +41,21 @@ public class Grn {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "GrnID")
 	private int grnID;
+	
+	@NotEmpty
 	@Column(name = "SupplierName")
 	private String supplierName;
+	
+	@NotEmpty
 	@Column(name = "ProductName")
 	private String productName;
+	
+	@NotNull
+	@Min(1)
 	@Column(name = "Quantity")
 	private int quantity;
 
+	@NotNull
 	@Column(name = "UnitPrice")
 	private double unitPrice;
 	

@@ -27,6 +27,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name = "supplier")
 public class Supplier {
@@ -34,8 +36,12 @@ public class Supplier {
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 @Column(name = "SupplierID")
 	private int supplierId;
+
+@NotEmpty
 @Column(name = "SupName")
 	private String supplierName;
+
+@NotEmpty
 @Column(name = "Organization")
 	private String organization;
 

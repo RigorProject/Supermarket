@@ -28,6 +28,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "item")
@@ -37,11 +41,19 @@ public class Product {
  @Column(name = "product_id")
  private int productId;
 
+ @NotEmpty
  @Column(name = "product_name")
  private String productName;
+ 
+ @NotEmpty
  @Column(name = "made_in")
  private String madeIn;
+ 
+ @NotEmpty
  private String brand;
+ 
+ @NotNull
+ @Min(1)
  private float price;
  
 /* @ManyToOne

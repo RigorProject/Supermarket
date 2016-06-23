@@ -10,6 +10,13 @@
 
 		<!-- Latest compiled JavaScript -->
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		
+		<style>
+ 
+    .error {
+        color: #ff0000;
+    }
+</style>
 	</head>
 	<body>
 		<div class="col-md-8">
@@ -25,16 +32,18 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="supplierName">Supplier Name</label>  
 				  <div class="col-md-4">
+				  <form:errors path="supplierName" cssClass="error"/>
 				  <form:input id="supplierName" path="supplierName" name="supplierName" type="text" placeholder="" class="form-control input-md" required=""/>
-					
-				  </div>
+				</div>
 				</div>
 				
 				<!-- Text input-->
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="productName">Product Name</label>  
 				  <div class="col-md-4">
+				  <form:errors path="productName" cssClass="error"/>
 				  <form:input id="productName" path="productName" name="productName" type="text" placeholder="" class="form-control input-md" required=""/>
+				  
 					
 				  </div>
 				</div>				
@@ -43,7 +52,9 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="quantity">Product Quantity</label>  
 				  <div class="col-md-4">
+				  <form:errors path="quantity" cssClass="error"/>
 				  <form:input id="quantity" path="quantity" name="quantity" type="text" placeholder="" class="form-control input-md" required=""/>
+				  
 					
 				  </div>
 				</div>
@@ -52,7 +63,9 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="unitPrice">Unit Price (buying)</label>  
 				  <div class="col-md-4">
+				  <form:errors path="unitPrice" cssClass="error"/>
 				  <form:input id="unitPrice" path="unitPrice" name="unitPrice" type="text" placeholder="" class="form-control input-md" required=""/>
+				  
 					
 				  </div>
 				</div>

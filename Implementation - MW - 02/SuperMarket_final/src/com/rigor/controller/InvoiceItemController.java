@@ -24,11 +24,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -44,6 +47,9 @@ public class InvoiceItemController {
 	private List<InvoiceItem> invoiceList = new ArrayList<>();
 	@Autowired
 	private InvoiceItemService invoiceItemService;
+	
+	 @Autowired
+	    MessageSource messageSource;
 	
 	@RequestMapping(value = "/listInvoice", method = RequestMethod.GET)
 	
@@ -116,9 +122,12 @@ public class InvoiceItemController {
 	}
 	
 	@RequestMapping(value = "/addInvoice" ,method=RequestMethod.POST)
-	public ModelAndView addGrn(InvoiceItem invoiceItm, BindingResult result) {
+	public ModelAndView addGrn(@Valid @ModelAttribute("invoiceItem") InvoiceItem invoiceItm, BindingResult result) {
 		
-		
+		if(result.hasErrors()){
+			return new ModelAndView("create-invoice");
+		}
+		else {
 		
 		if (invoiceItm.getInvoiceID() > 0) {
 			// update
@@ -133,6 +142,7 @@ public class InvoiceItemController {
 		modelAndView.addObject("invoices", invoiceItemService.getAllInvoice());
 		System.out.println(invoiceItm.getInvoiceID());
 		return modelAndView;
+	}
 	}
 
 }

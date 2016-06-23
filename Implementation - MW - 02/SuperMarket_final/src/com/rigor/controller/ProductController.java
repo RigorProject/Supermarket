@@ -24,13 +24,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -48,6 +51,9 @@ public class ProductController {
 
 	@Autowired
 	private ProductService productService;
+	
+	 @Autowired
+	    MessageSource messageSource;
 	
 
 	@RequestMapping(value = "/listProduct", method = RequestMethod.GET)
@@ -91,8 +97,13 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "/addProduct")
-	public ModelAndView addProduct(Product product, BindingResult result) {
+	public ModelAndView addProduct(@Valid @ModelAttribute("product") Product product, BindingResult result) {
 		ModelAndView modelAndView = new ModelAndView("list-product");
+		
+		if(result.hasErrors()){
+			return new ModelAndView("create-product");
+		}
+		else {
 		if (product.getProductId() > 0) {
 			// update
 			productService.update(product);
@@ -103,6 +114,7 @@ public class ProductController {
 		modelAndView.addObject("products", productService.getAllProducts());
 		System.out.println(product.getProductId());
 		return modelAndView;
+	}
 	}
 
 }

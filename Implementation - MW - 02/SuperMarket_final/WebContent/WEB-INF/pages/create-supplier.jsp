@@ -11,6 +11,12 @@
 
 		<!-- Latest compiled JavaScript -->
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<style>
+ 
+    .error {
+        color: #ff0000;
+    }
+</style>
 	</head>
 	<body>
 		<div class="col-md-8">
@@ -26,6 +32,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="supplierName">Supplier Name</label>  
 				  <div class="col-md-4">
+				  <form:errors path="supplierName" cssClass="error"/>
 				  <form:input id="supplierName" path="supplierName" name="supplierName" type="text" placeholder="" class="form-control input-md" required=""/>
 					
 				  </div>
@@ -35,6 +42,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="organization">Organization</label>  
 				  <div class="col-md-4">
+				  <form:errors path="organization" cssClass="error"/>
 				  <form:input id="organization" path="organization" name="organization" type="text" placeholder="" class="form-control input-md" required=""/>
 					
 				  </div>

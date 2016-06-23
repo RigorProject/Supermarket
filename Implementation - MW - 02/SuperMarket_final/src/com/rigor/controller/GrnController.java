@@ -20,13 +20,17 @@ package com.rigor.controller;
 */
 import java.util.ArrayList;
 import java.util.List;
+import javax.validation.Valid;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -43,6 +47,9 @@ public class GrnController {
 	@Autowired
 	private GrnService grnService;
 	
+	 @Autowired
+	    MessageSource messageSource;
+	
 	@RequestMapping(value = "/listGrn", method = RequestMethod.GET)
 	public ModelAndView ListGrn() {
 		return new ModelAndView("list-Grn", "grnList", grnService.getAllGrn());
@@ -51,8 +58,9 @@ public class GrnController {
 	}
 	
 	
+	
 	@RequestMapping(value = "modifyGrn")
-	public ModelAndView modifyGrn(Grn grnE,
+	public ModelAndView modifyGrn(Grn grnEntity,
 			BindingResult result) {
 
 		return new ModelAndView("list-Grn");
@@ -84,23 +92,31 @@ public class GrnController {
 
 	}
 
-	@RequestMapping(value = "/addGrn")
-	public ModelAndView addGrn(Grn grnE, BindingResult result) {
+	@RequestMapping(value = "/addGrn", method = RequestMethod.POST )
+	public ModelAndView addGrn(@Valid @ModelAttribute("grns") Grn grnEntity, BindingResult result) {
 		
 		ModelAndView modelAndView = new ModelAndView("list-Grn");
 		
-		if (grnE.getGrnID() > 0) {
+		if(result.hasErrors()){
+			return new ModelAndView("place-grn");
+		}
+		else {
+			
+		if (grnEntity.getGrnID() > 0) {
 			// update
-			grnService.update(grnE);
+			grnService.update(grnEntity);
 			
 		} else {
 			// add product
-			grnService.saveGrn(grnE);
+			grnService.saveGrn(grnEntity);
 			
 		}
 		modelAndView.addObject("grnList", grnService.getAllGrn());
-		System.out.println(grnE.getGrnID());
+		System.out.println(grnEntity.getGrnID());
 		return modelAndView;
+		
+		}
 	}
+
 
 }

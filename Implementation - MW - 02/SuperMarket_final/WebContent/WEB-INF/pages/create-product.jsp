@@ -11,6 +11,13 @@
 
 		<!-- Latest compiled JavaScript -->
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	
+	<style>
+ 
+    .error {
+        color: #ff0000;
+    }
+</style>
 	</head>
 	<body>
 		<div class="col-md-8">
@@ -26,6 +33,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="productName">Product Name</label>  
 				  <div class="col-md-4">
+				  <form:errors path="productName" cssClass="error"/>
 				  <form:input id="productName" path="productName" name="productName" type="text" placeholder="" class="form-control input-md" required=""/>
 					
 				  </div>
@@ -35,6 +43,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="sellingPrice">Brand Name</label>  
 				  <div class="col-md-4">
+				  <form:errors path="brand" cssClass="error"/>
 				  <form:input id="brand" path="brand" name="brand" type="text" placeholder="" class="form-control input-md" required=""/>
 					
 				  </div>
@@ -44,6 +53,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="price">Selling Price</label>  
 				  <div class="col-md-4">
+				  <form:errors path="price" cssClass="error"/>
 				  <form:input id="price" path="price" name="price" type="text" placeholder="" class="form-control input-md" required=""/>
 					
 				  </div>
@@ -53,6 +63,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="madeIn">Made-In</label>  
 				  <div class="col-md-4">
+				  <form:errors path="madeIn" cssClass="error"/>
 				  <form:input id="madeIn" path="madeIn" name="madeIn" type="text" placeholder="" class="form-control input-md" required=""/>
 					
 				  </div>

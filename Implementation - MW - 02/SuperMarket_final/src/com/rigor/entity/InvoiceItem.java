@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="invoiceItem")
@@ -19,9 +21,12 @@ public class InvoiceItem {
 @Column(name="Invoice_ID")
 private int invoiceID;
 
+@NotNull
 @Column(name="Item_ID")
 private int itemID;
 
+@NotNull
+@Min(1)
 @Column(name="Item_Amount")
 private double amount;
 

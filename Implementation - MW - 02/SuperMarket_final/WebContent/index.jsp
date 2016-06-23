@@ -32,7 +32,7 @@
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Product <span class="caret"></span></a>
 				  <ul class="dropdown-menu">
 					<li> <a href="<c:url value='product.htm'/>">Add Product</a></li>
-					<li> <a href="<c:url value='addProduct.htm'/>">Product Search</a></li>
+					<li> <a href="<c:url value='listProduct.htm'/>">Product Search</a></li>
 				  </ul>
 				</li>
 				<li class="dropdown">
