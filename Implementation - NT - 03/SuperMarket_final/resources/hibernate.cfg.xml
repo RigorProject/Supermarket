@@ -9,7 +9,7 @@
 		<property name="connection.url">jdbc:mysql://localhost:3306/supermarket_db</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">root</property>
-		 <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property> 
+		<property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
 		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
 
 
@@ -17,10 +17,15 @@
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		<property name="hbm2ddl.auto">update</property>
+
 		<mapping class="com.rigor.entity.Supplier" />
 		<mapping class="com.rigor.entity.Product" />
 		<mapping class="com.rigor.entity.InvoiceItem" />
 		<mapping class="com.rigor.entity.Grn" />
+
+		<mapping class="com.rigor.entity.User" />
+		<mapping class="com.rigor.entity.Group" />
+		<mapping class="com.rigor.entity.UserGroup" />
 
 	</session-factory>
 </hibernate-configuration>

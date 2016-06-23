@@ -1,0 +1,1 @@
+http://what-when-how.com/hibernate/transactions-and-concurrency-hibernate/
