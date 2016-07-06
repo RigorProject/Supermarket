@@ -18,6 +18,7 @@ package com.rigor.dao;
 */
 import java.util.List;
 
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -29,9 +30,10 @@ import org.springframework.stereotype.Repository;
 
 import com.rigor.entity.Grn;
 import com.rigor.util.HibernateUtility;
-
-@Repository
-public class GrnDAOImpl implements GrnDAO {
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+@Repository("grnDAO")
+public class GrnDAOImpl extends AbstractDao<Integer, Grn> implements GrnDAO {
 
 	
 	public GrnDAOImpl() {
@@ -93,7 +95,8 @@ public class GrnDAOImpl implements GrnDAO {
 	public Grn findById(int id) {
 		Session session = HibernateUtility.getSessionFactory().openSession();
 		try {
-			return (Grn) session.get(Grn.class, id);
+			//return (Grn) session.get(Grn.class, id);
+			 return getByKey(id);
 		} catch (HibernateException e) {
 			try {
 				session.getTransaction().rollback();
@@ -112,6 +115,7 @@ public class GrnDAOImpl implements GrnDAO {
 	 * given table for given id .
 	 * 
 	 */
+	 @SuppressWarnings("unchecked")
 	public List<Grn> findAll() {
 		Session session = HibernateUtility.getSessionFactory().openSession();
 		try {

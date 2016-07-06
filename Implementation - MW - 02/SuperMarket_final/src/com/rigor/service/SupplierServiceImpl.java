@@ -1,6 +1,8 @@
 package com.rigor.service;
 import java.util.List;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +29,9 @@ public class SupplierServiceImpl implements SupplierService {
 	public Supplier getSupplier(int id) {
 		Supplier supplier = supplierDAO.findById(id);
 		return supplier;
+		
+		
+		
 	}
 
 	@Override

@@ -1,5 +1,10 @@
 package com.rigor.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+
 /** 
 
 * Entity Class for Product. 
@@ -22,9 +27,13 @@ package com.rigor.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -45,9 +54,22 @@ public class Supplier {
 @Column(name = "Organization")
 	private String organization;
 
+private Set<Grn> grn = new HashSet<Grn>(
+		0);
+
+@OneToMany(fetch = FetchType.LAZY , mappedBy = "grn")
+public Set<Grn> getGrn() {
+	return this.grn;
+}
+public void setGrn(Set<Grn> grn) {
+	this.grn = grn;
+}
+
+
 public int getSupplierId() {
 	return supplierId;
 }
+
 public void setSupplierId(int supplierId) {
 	this.supplierId = supplierId;
 }

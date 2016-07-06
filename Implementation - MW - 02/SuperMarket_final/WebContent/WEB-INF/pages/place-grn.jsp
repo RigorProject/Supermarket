@@ -80,7 +80,7 @@
 						
 					</c:when>
 					<c:otherwise>
-						<input type="submit" value="AddProduct" class="btn btn-success" />
+						<input type="submit" value="AddGrn" class="btn btn-success" />
 						
 					</c:otherwise>
 				</c:choose>
