@@ -17,11 +17,11 @@
 					<fieldset>
 
 					<!-- Form Name -->
-					<legend>GRN Search</legend>
+					<legend>Supplier Search</legend>
 
 					<!-- Appended Input-->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="appendedtext">Search GRN</label>
+					  <label class="col-md-4 control-label" for="appendedtext">Search Suppliers</label>
 					  <div class="col-md-4">
 						<div class="input-group">
 						  <input id="appendedtext" name="appendedtext" class="form-control" placeholder="" type="text">
@@ -42,21 +42,17 @@
 				  
 			<table  class="table">
 				<tr >
+					<th>Supplier Id</th>
 					<th>Supplier Name</th>
-					<th>Product Name</th>
-					<th>Product Quantity</th>
-					<th>Unit Price (Buying)</th>
-					
+					<th>Organization</th>
 				</tr>
-				<c:if test="${!empty grnList}">
-				<c:forEach items="${grnList}" var="grnlist">
+				<c:if test="${!empty suppliers}">
+				<c:forEach items="${suppliers}" var="supplier">
 					<tr bgcolor="#E1E1E1">
-						<td>${grnlist.supplier.supplierName}</td>
-						<td>${grnlist.productName}</td>
-						<td>${grnlist.quantity}</td>
-						<td>${grnlist.unitPrice}</td>
-						<td><a href="<c:url value='editGrn?id=${grnlist.grnID}'/>"> <button id="editGrn" name="editGrn" class="btn btn-success">Edit</button></a>
-							<a href="<c:url value='deleteGrn?id=${grnlist.grnID}'/>"><button id="deleteGrn" name="deleteGrn" class="btn btn-danger">Delete</button></a>
+						<td>${supplier.supplierName}</td>
+						<td>${supplier.organization}</td>
+						<td><a href="<c:url value='editSupplier.htm?id=${supplier.supplierId}'/>"> <button id="editSupplier" name="editSupplier" class="btn btn-success">Edit</button></a>
+							<a href="<c:url value='deleteSupplier.htm?id=${supplier.supplierId}'/>"><button id="deleteSupplier" name="deleteSupplier" class="btn btn-danger">Delete</button></a>
 							</td>
 					</tr>
 
@@ -65,7 +61,7 @@
 			</table>
 			<hr>
 			<p>
-				<a href="addGrn"><button id="addMore" name="addMore" class="btn btn-success">Add More GRNs</button></a>
+				<a href="supplier.htm"><button id="addMore" name="addMore" class="btn btn-success">Add More Suppliers</button></a>
 			</p>
 				  
 				  

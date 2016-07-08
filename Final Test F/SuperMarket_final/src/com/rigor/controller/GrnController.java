@@ -37,9 +37,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.rigor.dao.GrnDAO;
 import com.rigor.entity.Grn;
-import com.rigor.entity.Supplier;
 import com.rigor.service.GrnService;
-import com.rigor.service.SupplierService;
 
 @Controller
 @RequestMapping("/")
@@ -48,9 +46,6 @@ public class GrnController {
 	
 	@Autowired
 	private GrnService grnService;
-	
-	@Autowired
-	private SupplierService supService;
 	
 	 @Autowired
 	    MessageSource messageSource;
@@ -91,9 +86,6 @@ public class GrnController {
 
 	@RequestMapping(value = "/addGrn", method = RequestMethod.GET)
 	public String addGrn(ModelMap modelMap) {
-		List<Supplier> supList=supService.getAllSuppliers();
-		
-		modelMap.addAttribute("suppliers",supList);
 		modelMap.addAttribute("grns", new Grn());
 		modelMap.addAttribute("update", false);
 		return "place-grn";

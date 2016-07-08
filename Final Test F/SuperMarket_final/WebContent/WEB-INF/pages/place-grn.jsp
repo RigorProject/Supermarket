@@ -32,16 +32,9 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="supplierName">Supplier Name</label>  
 				  <div class="col-md-4">
-				<%--   <form:errors path="supplierName" cssClass="error"/>
+				  <form:errors path="supplierName" cssClass="error"/>
 				  <form:input id="supplierName" path="supplierName" name="supplierName" type="text" placeholder="" class="form-control input-md" required=""/>
-				 --%>
-				 <form:select class="form-control" path="supplier.supplierId">
-				 <c:forEach items="${suppliers}" var="temp">
-				 <option value='<c:out value="${temp.supplierId }" />'>
-				 <c:out value="${temp.supplierName }"></c:out> </option>
-				 </c:forEach>
-				 </form:select>
-				 </div>
+				</div>
 				</div>
 				
 				<!-- Text input-->
@@ -87,7 +80,7 @@
 						
 					</c:when>
 					<c:otherwise>
-						<input type="submit" value="AddGrn" class="btn btn-success" />
+						<input type="submit" value="AddProduct" class="btn btn-success" />
 						
 					</c:otherwise>
 				</c:choose>

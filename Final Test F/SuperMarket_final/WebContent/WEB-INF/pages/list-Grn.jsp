@@ -51,7 +51,7 @@
 				<c:if test="${!empty grnList}">
 				<c:forEach items="${grnList}" var="grnlist">
 					<tr bgcolor="#E1E1E1">
-						<td>${grnlist.supplier.supplierName}</td>
+						<td>${grnlist.supplierName}</td>
 						<td>${grnlist.productName}</td>
 						<td>${grnlist.quantity}</td>
 						<td>${grnlist.unitPrice}</td>

@@ -1,3 +1,8 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 	<head>
@@ -17,11 +22,11 @@
 					<fieldset>
 
 					<!-- Form Name -->
-					<legend>GRN Search</legend>
+					<legend>Invoice Search</legend>
 
 					<!-- Appended Input-->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="appendedtext">Search GRN</label>
+					  <label class="col-md-4 control-label" for="appendedtext">Search Invoice</label>
 					  <div class="col-md-4">
 						<div class="input-group">
 						  <input id="appendedtext" name="appendedtext" class="form-control" placeholder="" type="text">
@@ -42,22 +47,24 @@
 				  
 			<table  class="table">
 				<tr >
-					<th>Supplier Name</th>
-					<th>Product Name</th>
-					<th>Product Quantity</th>
-					<th>Unit Price (Buying)</th>
+					<th>Invoice ID</th>
+					<th>Item ID</th>
+					<th>Amount</th>
+					
 					
 				</tr>
-				<c:if test="${!empty grnList}">
-				<c:forEach items="${grnList}" var="grnlist">
+				
+				
+				<c:if test="${!empty invoices}">
+				<c:forEach items="${invoices}" var="invoice_list">
 					<tr bgcolor="#E1E1E1">
-						<td>${grnlist.supplier.supplierName}</td>
-						<td>${grnlist.productName}</td>
-						<td>${grnlist.quantity}</td>
-						<td>${grnlist.unitPrice}</td>
-						<td><a href="<c:url value='editGrn?id=${grnlist.grnID}'/>"> <button id="editGrn" name="editGrn" class="btn btn-success">Edit</button></a>
-							<a href="<c:url value='deleteGrn?id=${grnlist.grnID}'/>"><button id="deleteGrn" name="deleteGrn" class="btn btn-danger">Delete</button></a>
-							</td>
+						<td>${invoice_list.invoiceID}</td>
+					    <td>${invoice_list.itemID}</td> 
+						<td>${invoice_list.amount}</td>
+						
+						<td><a href="<c:url value='/editInvoice/${invoice_list.invoiceID}'/>"> <button id="editInvoice" name="editInvoice" class="btn btn-success">Edit</button></a>
+							<a href="<c:url value='/deleteInvoice/${invoice_list.invoiceID}'/>"><button id="deleteInvoice" name="deleteInvoice" class="btn btn-danger">Delete</button></a>
+						</td>  
 					</tr>
 
 				</c:forEach>
@@ -65,7 +72,7 @@
 			</table>
 			<hr>
 			<p>
-				<a href="addGrn"><button id="addMore" name="addMore" class="btn btn-success">Add More GRNs</button></a>
+				<a href="http://localhost:8080/SuperMarket/addInvoice.htm"><button id="addMore" name="addMore" class="btn btn-success">Add More Invoice</button></a>
 			</p>
 				  
 				  

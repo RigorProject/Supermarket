@@ -1,4 +1,25 @@
 package com.rigor.entity;
+/** 
+
+* Entity Class for Grn. 
+* 
+* Copyright (c) Virtusa Corporation 2016, All Rights Reserved.
+* 
+* This class is the entity class for Grn which is  
+* use to generate table name grn and create relevant columns for the table  . 
+* 
+* @author Madushika 
+* 
+* @version 1.0
+* 
+* @see see also GrnController.java, 
+* GrnDAO.java, GrnDAOImpl.java, 
+* GrnService.java,GrnServiceImpl.java classes 
+* 
+
+*/ 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -6,14 +27,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
-
-
 
 @Entity
 @Table(name = "grn")
@@ -23,6 +44,9 @@ public class Grn {
 	@Column(name = "GrnID")
 	private int grnID;
 	
+	@NotEmpty
+	@Column(name = "SupplierName")
+	private String supplierName;
 	
 	@NotEmpty
 	@Column(name = "ProductName")
@@ -37,26 +61,32 @@ public class Grn {
 	@Column(name = "UnitPrice")
 	private double unitPrice;
 	
+	/*private Supplier supplier;
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "SupplierID")
-	private Supplier supplier;
-
-	
+	@JoinColumn(name = "SUPPLIER_ID", nullable = false)*/
 
 	public int getGrnID() {
 		return grnID;
 	}
 
-	public Supplier getSupplier() {
+/*	public Supplier getSupplier() {
 		return supplier;
 	}
 
 	public void setSupplier(Supplier supplier) {
 		this.supplier = supplier;
 	}
-
+*/
 	public void setGrnID(int grnID) {
 		this.grnID = grnID;
+	}
+
+	public String getSupplierName() {
+		return supplierName;
+	}
+
+	public void setSupplierName(String supplierName) {
+		this.supplierName = supplierName;
 	}
 
 	public String getProductName() {

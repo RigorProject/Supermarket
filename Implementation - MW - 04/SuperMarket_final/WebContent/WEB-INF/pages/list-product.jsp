@@ -17,11 +17,11 @@
 					<fieldset>
 
 					<!-- Form Name -->
-					<legend>GRN Search</legend>
+					<legend>Product Search</legend>
 
 					<!-- Appended Input-->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="appendedtext">Search GRN</label>
+					  <label class="col-md-4 control-label" for="appendedtext">Search Products</label>
 					  <div class="col-md-4">
 						<div class="input-group">
 						  <input id="appendedtext" name="appendedtext" class="form-control" placeholder="" type="text">
@@ -42,21 +42,21 @@
 				  
 			<table  class="table">
 				<tr >
-					<th>Supplier Name</th>
 					<th>Product Name</th>
-					<th>Product Quantity</th>
-					<th>Unit Price (Buying)</th>
-					
+					<th>Brand</th>
+					<th>Price</th>
+					<th>Made-In</th>
+					<th>Action</th>
 				</tr>
-				<c:if test="${!empty grnList}">
-				<c:forEach items="${grnList}" var="grnlist">
+				<c:if test="${!empty products}">
+				<c:forEach items="${products}" var="product">
 					<tr bgcolor="#E1E1E1">
-						<td>${grnlist.supplier.supplierName}</td>
-						<td>${grnlist.productName}</td>
-						<td>${grnlist.quantity}</td>
-						<td>${grnlist.unitPrice}</td>
-						<td><a href="<c:url value='editGrn?id=${grnlist.grnID}'/>"> <button id="editGrn" name="editGrn" class="btn btn-success">Edit</button></a>
-							<a href="<c:url value='deleteGrn?id=${grnlist.grnID}'/>"><button id="deleteGrn" name="deleteGrn" class="btn btn-danger">Delete</button></a>
+						<td>${product.productName}</td>
+						<td>${product.brand}</td>
+						<td>${product.price}</td>
+						<td>${product.madeIn}</td>
+						<td><a href="<c:url value='editProduct.htm?id=${product.productId}'/>"> <button id="editProduct" name="editProduct" class="btn btn-success">Edit</button></a>
+							<a href="<c:url value='deleteProduct.htm?id=${product.productId}'/>"><button id="deleteProduct" name="deleteProduct" class="btn btn-danger">Delete</button></a>
 							</td>
 					</tr>
 
@@ -65,7 +65,7 @@
 			</table>
 			<hr>
 			<p>
-				<a href="addGrn"><button id="addMore" name="addMore" class="btn btn-success">Add More GRNs</button></a>
+				<a href="product.htm"><button id="addMore" name="addMore" class="btn btn-success">Add More Product</button></a>
 			</p>
 				  
 				  
