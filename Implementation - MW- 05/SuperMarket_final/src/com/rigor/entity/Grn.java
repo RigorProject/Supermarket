@@ -24,11 +24,9 @@ public class Grn {
 	private int grnID;
 	
 	
-/*	@NotEmpty
+	@NotEmpty
 	@Column(name = "ProductName")
-	private String productName;*/
-	
-	private Product product;
+	private String productName;
 	
 	@NotNull
 	@Min(1)
@@ -59,14 +57,14 @@ public class Grn {
 	public void setGrnID(int grnID) {
 		this.grnID = grnID;
 	}
-    
-	/*public String getProductName() {
+
+	public String getProductName() {
 		return productName;
 	}
 
 	public void setProductName(String productName) {
 		this.productName = productName;
-	}*/
+	}
 
 	public int getQuantity() {
 		return quantity;
@@ -82,14 +80,6 @@ public class Grn {
 
 	public void setUnitPrice(double unitPrice) {
 		this.unitPrice = unitPrice;
-	}
-
-	public Product getProduct() {
-		return product;
-	}
-
-	public void setProduct(Product product) {
-		this.product = product;
 	}
 
 

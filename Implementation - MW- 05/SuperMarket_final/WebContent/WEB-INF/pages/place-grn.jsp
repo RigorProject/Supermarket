@@ -48,14 +48,9 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="productName">Product Name</label>  
 				  <div class="col-md-4">
-				  <%-- <form:errors path="productName" cssClass="error"/>
-				  <form:input id="productName" path="productName" name="productName" type="text" placeholder="" class="form-control input-md" required=""/> --%>
-				 <form:select class="form-control" path="item.productId">
-				 <c:forEach items="${products}" var="temp1">
-				 <option value='<c:out value="${temp1.productId }" />'>
-				 <c:out value="${temp1.productName }"></c:out> </option>
-				 </c:forEach>
-				 </form:select>
+				  <form:errors path="productName" cssClass="error"/>
+				  <form:input id="productName" path="productName" name="productName" type="text" placeholder="" class="form-control input-md" required=""/>
+		
 				  </div>
 				</div>				
 				

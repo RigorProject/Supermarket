@@ -16,7 +16,7 @@
 		<!-- Echo all executed SQL to stdout -->
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">update</property>
 		<mapping class="com.rigor.entity.Supplier" />
 		<mapping class="com.rigor.entity.Product" />
 		<mapping class="com.rigor.entity.InvoiceItem" />

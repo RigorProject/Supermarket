@@ -40,15 +40,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 import com.rigor.entity.Product;
-import com.rigor.entity.Supplier;
 import com.rigor.service.ProductService;
 
 @Controller
 @RequestMapping("/")
 public class ProductController {
 
-	/*private List<Product> productList = new ArrayList();*/
-	private List<Product> productList = new ArrayList<Product>();
+	private List<Product> productList = new ArrayList();
 
 
 	@Autowired

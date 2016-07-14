@@ -54,9 +54,6 @@ public class GrnController {
 	@Autowired
 	private SupplierService supllierService;
 	
-	@Autowired
-	private ProductService productService;
-	
 	
 	@Autowired
 	    MessageSource messageSource;
@@ -98,10 +95,10 @@ public class GrnController {
 	@RequestMapping(value = "/addGrn", method = RequestMethod.GET)
 	public String addGrn(ModelMap modelMap) {
 		List<Supplier> supllierList=supllierService.getAllSuppliers();
-		List<Product> productList = productService.getAllProducts();
+		/*List<Product> productList = productService.getAllProducts();*/
 		
 		modelMap.addAttribute("suppliers",supllierList);
-		modelMap.addAttribute("products", productList);
+		/*modelMap.addAttribute("products", productList);*/
 		modelMap.addAttribute("grns", new Grn());
 		modelMap.addAttribute("update", false);
 		return "place-grn";

@@ -57,18 +57,18 @@ public class Product {
  @Min(1)
  private float price;
  
- @ManyToOne(fetch = FetchType.LAZY)
+/* @ManyToOne(fetch = FetchType.LAZY)
  @JoinColumn(name = "grnID")
- private Grn grn;
+ private Grn grn;*/
  
 
 
- public Grn getGrn() {
+/* public Grn getGrn() {
 	return grn;
 }
 public void setGrn(Grn grn) {
 	this.grn = grn;
-}
+}*/
 public int getProductId() {
   return productId;
  }
